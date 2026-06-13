@@ -1,0 +1,27 @@
+## Build outputs
+**/bin/
+**/obj/
+[Bb]in/
+[Oo]bj/
+
+## IDE and Editor files
+.vs/
+.vscode/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## OS files
+.DS_Store
+Thumbs.db
+
+## Log files
+*.log
+*.log.*
+task-*.log
+
+## Test results
+TestResults/
+*.trx
+*.xml
