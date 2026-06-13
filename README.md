@@ -59,7 +59,21 @@ dotnet --version
    ```powershell
    dotnet run --project src/UnitConversion.Api
    ```
-By default, the API will start and listen on:
+
+### Running with Docker
+
+Alternatively, you can run the API containerized using Docker and Docker Compose:
+
+1. Build and start the container:
+   ```powershell
+   docker-compose up --build -d
+   ```
+2. Stop and clean up the container:
+   ```powershell
+   docker-compose down
+   ```
+
+By default, both native execution and Docker containers will expose the API and UI at:
 - HTTP: `http://localhost:5000`
 - Swagger UI (Development mode): `http://localhost:5000/swagger/index.html`
 

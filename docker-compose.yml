@@ -1,0 +1,18 @@
+services:
+  api:
+    image: unit-conversion-api:latest
+    container_name: unit-conversion-api
+    build:
+      context: .
+      dockerfile: src/UnitConversion.Api/Dockerfile
+    ports:
+      - "5000:5000"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:5000
+    networks:
+      - unit-conversion-net
+
+networks:
+  unit-conversion-net:
+    driver: bridge
