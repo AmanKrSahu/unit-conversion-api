@@ -75,3 +75,12 @@ graph TD
 4. **Short-circuiting**: If the units are identical (e.g. meters to meters), the service skips calculation and returns the original value instantly.
 5. **Strategy Execution**: The service finds the appropriate `IUnitConverter` matching the category (e.g. `LinearUnitConverter` for Length). The converter fetches the registered scale factors from `IUnitRegistry`, performs the math, and returns the converted value.
 6. **Response Out**: The service wraps the result in a `ConversionResult` record, and the controller serializes it to JSON string, sending it back to the client as `200 OK`.
+
+---
+
+## 4. Containerization & Deployment
+
+To support cross-platform deployment and standard DevOps workflows, the project includes:
+- **[Dockerfile](../src/UnitConversion.Api/Dockerfile)**: Multi-stage build configuration that builds and publishes the API using a clean **Ubuntu 24.04** base image. It securely installs the .NET 8 SDK and ASP.NET Core 8 runtime directly from Ubuntu's native package feeds to guarantee reliable image pulling across restricted networks.
+- **[docker-compose.yml](../docker-compose.yml)**: High-level orchestration that spins up the API container on port 5000 and isolates it within a standard `unit-conversion-net` bridge network.
+
